@@ -66,11 +66,11 @@ pip install pygame pylsl pandas matplotlib seaborn
 
 ### Running the Modules / 启动模块
 
-| Module / 功能模块 | Command / 启动命令 |
+| Module / 功能模块 | Command / 启动命令 | 
 | :--- | :--- |
-| **Fatigue Assessment (PVT)** | `python fatigue_pvt.py --lang en` (English Version) | python fatigue_pvt.py （中文版本）
-| **Fatigue Induction (N-back)** | `python n_back_induction.py --lang en` (English Version) | python n_back_induction.py （中文版本）
-| **Data Analysis Dashboard** | `python analysis_dashboard.py --lang en` (English Version) | python analysis_dashboard.py（中文版本）
+| **Fatigue Assessment (PVT)** | `python fatigue_pvt.py --lang en` (English Version)  `python fatigue_pvt.py` （中文版本）
+| **Fatigue Induction (N-back)** | `python n_back_induction.py --lang en` (English Version)  `python n_back_induction.py` （中文版本）
+| **Data Analysis Dashboard** | `python analysis_dashboard.py --lang en` (English Version)  `python analysis_dashboard.py`（中文版本）
 
 ---
 
