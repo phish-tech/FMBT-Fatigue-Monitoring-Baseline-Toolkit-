@@ -1,0 +1,12 @@
+# 核心 GUI 与游戏化引擎
+pygame
+
+# 硬件时间戳毫秒级同步
+pylsl
+
+# 数据处理与科学计算
+pandas
+
+# 专业科研绘图
+matplotlib
+seaborn
