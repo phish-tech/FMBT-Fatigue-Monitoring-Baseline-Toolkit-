@@ -7,9 +7,9 @@
 
 ## 📖 Project Overview / 项目简介
 
-**FMBT** is a high-performance, research-oriented toolkit designed for fatigue-related studies, specifically tailored as a baseline for **belt-based fatigue monitoring systems**. It provides a closed-loop workflow: from rapid mental fatigue induction to objective assessment and automated data analysis.
+**FMBT** is a high-performance, research-oriented toolkit designed for fatigue-related studies, specifically tailored as a baseline for **sensor-based fatigue monitoring systems**. It provides a closed-loop workflow: from rapid mental fatigue induction to objective assessment and automated data analysis.
 
-**FMBT** 是一套专为疲劳研究设计的科研工具包，特别适用于作为**基于安全带的疲劳监测系统**的对比基准（Baseline）。它提供了一套完整的闭环工作流：从快速脑力疲劳诱导，到客观疲劳度评估，再到全自动化的数据分析。
+**FMBT** 是一套专为疲劳研究设计的科研工具包，特别适用于作为**基于传感器的疲劳监测系统**的对比基准（Baseline）。它提供了一套完整的闭环工作流：从快速脑力疲劳诱导，到客观疲劳度评估，再到全自动化的数据分析。
 
 ---
 
@@ -56,12 +56,11 @@ One-click generation of professional-grade research reports.
 
 ### Installation / 环境准备
 ```bash
-# Clone the repository
+# 克隆代码 / Clone the repository
 git clone https://github.com/phish-tech/FMBT-Fatigue-Monitoring-Baseline-Toolkit-
-cd Fatigue_Driving_Baseline
 
-# Install dependencies
-pip install pygame pylsl pandas matplotlib seaborn
+# 安装依赖 / Install dependencies
+pip install -r requirements.txt
 ```
 
 ### Running the Modules / 启动模块
@@ -85,6 +84,64 @@ This toolkit is designed to sync with hardware sensors (e.g., EEG, ECG, or belt-
 * **时间戳对齐**：建议使用 **LabRecorder** 等工具同时记录传感器流与 FMBT 标记流，以实现毫秒级对齐。
 
 ---
+
+## 📝 Subject Instructions / 实验操作指南
+This section provides a standard guide for subjects participating in the experiment.
+本章节为参与实验的受试者提供标准操作指南。
+
+### 1. Objective Vigilance Task (PVT) / 客观警觉性任务
+Module: fatigue_pvt.py
+
+The PVT measures your sustained attention and reaction speed.
+PVT 用于测量您的持续注意力和反应速度。
+
+Objective / 目标: Respond to visual stimuli as quickly and accurately as possible.
+尽可能快且准确地对视觉刺激做出反应。
+
+The Stimulus / 刺激: A letter (W, A, S, or D) will appear on a green background after a random waiting period.
+在随机等待期后，屏幕会变为绿色背景并显示一个字母（W, A, S 或 D）。
+
+Action / 操作: Press the corresponding key on your keyboard immediately.
+立即按下键盘上对应的按键。
+
+Constraints / 约束:
+
+False Start / 抢答: Do not press any key before the stimulus appears; this will be recorded as a "False Start".
+在刺激出现前不要按键，否则会被计为“抢答”。
+
+Wrong Key / 错键: Pressing the incorrect letter key will result in a time penalty (e.g., +200ms) added to your reaction time.
+按错键会导致反应时间增加处罚时长（如 +200ms）。
+
+<img width="1822" height="1144" alt="image" src="https://github.com/user-attachments/assets/9023a965-7671-478a-91da-11bd75f39bc8" />
+
+### 2. Fatigue Induction Task (N-back) / 疲劳诱导任务
+Module: n_back_induction.py
+
+This task is designed to induce mental fatigue through high-intensity working memory refresh.
+该任务通过高强度的工作记忆刷新来诱发脑力疲劳。
+
+Objective / 目标: Compare the current letter with the one shown N steps ago.
+将当前显示的字母与 N 步前出现的字母进行比较。
+
+The Rule / 规则 (e.g., 3-back):
+
+MATCH / 相同: If the current letter is the same as the letter 3 steps back, press [ J ].
+如果当前字母与 3 步前的字母相同，请按 [ J ]。
+
+MISMATCH / 不同: If they are different, press [ F ].
+如果两者不同，请按 [ F ]。
+
+Visual Feedback / 视觉反馈: The "Data Core" in the center will become blurry or pixelated if your accuracy drops, representing system instability.
+如果您的正确率下降，中央的“数据核心”会变得模糊或产生像素化，代表系统不稳定。
+
+Subjective Rating / 主观评分: At the end of each block, you will be asked to provide a KSS score (1-9).
+在每个区块结束时，您需要提供一次 KSS 评分 (1-9)。
+
+1: Extremely alert / 极其清醒.
+
+9: Extremely sleepy / 极度困倦.
+
+<img width="2036" height="698" alt="image" src="https://github.com/user-attachments/assets/17ce6df1-ed08-4437-9731-f743d3448055" />
 
 ## ✉️ Author & Signature / 作者与署名
 
